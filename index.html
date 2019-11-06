@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<script src="./js/jquery-3.3.1.js"></script>
+<script src="./js/snake_2.js"></script>
+<meta charset="utf8">
+<title>Snake Game</title>
+<style>
+html, body { margin: 0px; padding: 0; overflow: hidden; }
+#center_main_box { width: 800px; margin: 50px auto; }
+
+table { border-collapse: collapse; border: 10px solid #004CFF; box-sizing: border-box; } 
+
+table tr td { width: 30px; height: 30px; text-align: center; line-height: 35px; background-color: rgb(108, 249, 0); } 
+table tr:nth-child(odd) td:nth-child(odd) { background-color: #1FE30B; } 
+table tr:nth-child(even) td:nth-child(even) { background-color: #52BA00; } 
+
+.snake { background-color: #0000ff; z-index: 99; }
+table tr:nth-child(odd) td:nth-child(odd).snake { background-color: #0000ff; z-index: 99; }
+table tr:nth-child(even) td:nth-child(even).snake { background-color: #0000ff; z-index: 99; } 
+
+.snake_head { background-color: #03038a; z-index: 99; }
+table tr:nth-child(odd) td:nth-child(odd).snake_head { background-color: #03038a; z-index: 99; }
+table tr:nth-child(even) td:nth-child(even).snake_head { background-color: #03038a; z-index: 99; } 
+
+#item { background-color: #ff0000; z-index: -1; }
+table tr:nth-child(odd) td:nth-child(odd)#item { background-color: #ff0000; z-index: -1; }
+table tr:nth-child(even) td:nth-child(even)#item { background-color: #ff0000; z-index: -1; }
+</style>
+</head>
+
+<body>
+<div id="center_main_box">
+  <div id="score_box">아이템 : <span></span> 개</div><br />
+  <div id="play_game_box">
+    <table id="game_table">
+       <script>
+        var col = new Array();
+        col[17] = new Array();
+
+         for(var i =0; i<col.length; i++) {
+           $('table').append('<tr data-y='+ i +'>/tr>');
+            for(var ii=0; ii<col.length; ii++) {
+              $('table > tr:eq('+i+')').append('<td data-x='+ ii +'></td>').val('');
+            }
+          }
+       </script>
+    </table>
+  </div>
+</div>
+</body>
+</html>
