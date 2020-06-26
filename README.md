@@ -1,1 +1,2 @@
-# github_page_test
+# Snake game
+# html, css, javaScript
